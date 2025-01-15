@@ -84,6 +84,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue 'string', 'build_config_package','com.awesomeproject'
+
     }
     signingConfigs {
         debug {
@@ -105,6 +107,22 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
+    flavorDimensions 'env'
+    productFlavors {
+        development {
+            dimension 'env'
+            applicationIdSuffix ".development"
+        }
+        staging {
+            dimension 'env'
+            applicationIdSuffix ".staging"
+        }
+        production {
+            dimension 'env'
+            applicationIdSuffix ""
+        }
+    }
 }
 
 dependencies {
@@ -117,3 +135,11 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
+project.ext.envConfigFiles = [
+        development: ".env.development",
+        staging :".env.staging",
+        production:'.env.production'
+]
