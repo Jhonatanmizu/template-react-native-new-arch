@@ -1,5 +1,5 @@
 {
-  "name": "AwesomeProject",
+  "name": "TemplateReactNativeNewArch",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -53,10 +53,12 @@
     "aos:bundle": "yarn aos:PR-Bundle && yarn open-bundle"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.0",
     "cross-env": "^7.0.3",
     "react": "18.3.1",
     "react-native": "0.76.5",
-    "react-native-config": "^1.5.3"
+    "react-native-config": "^1.5.3",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
