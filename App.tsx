@@ -1,25 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Config from 'react-native-config';
-import {Text, StyleSheet, StatusBar, SafeAreaView} from 'react-native';
-
-const STATUS_BAR_HEIGHT: number = StatusBar.currentHeight
-  ? StatusBar.currentHeight
-  : 0;
+// Components
+import {Text} from 'react-native';
+import {AppWrapper} from './src/shared/components';
 
 export default function App() {
   const environment = Config.ENVIRONMENT || '';
+  const handleLoggerEnvironment = () => {
+    const isDevelopmentOrStaging =
+      environment === 'development' || environment === 'staging';
+    if (!isDevelopmentOrStaging) {
+      return;
+    }
+    console.log('🚀 ~ App ~ environment:', environment);
+  };
+
+  useEffect(() => {
+    handleLoggerEnvironment();
+  }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <AppWrapper>
       <Text>{environment}</Text>
-    </SafeAreaView>
+    </AppWrapper>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: STATUS_BAR_HEIGHT,
-    backgroundColor: 'red',
-  },
-});
