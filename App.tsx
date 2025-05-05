@@ -12,7 +12,7 @@ export default function App() {
     if (!isDevelopmentOrStaging) {
       return;
     }
-    console.warn('🚀 ~ App ~ environment:', environment);
+    console.log('🚀 ~ App ~ environment:', environment);
   };
 
   useEffect(() => {
