@@ -1,7 +1,9 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./src"
+    "jsx": "react",
+    "baseUrl": "./src",
+    "esModuleInterop": true
   },
   "paths": {
     "@/*": ["./src/*"],
