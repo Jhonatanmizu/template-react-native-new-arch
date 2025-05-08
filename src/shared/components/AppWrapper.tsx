@@ -9,7 +9,11 @@ const STATUS_BAR_HEIGHT: number = StatusBar.currentHeight
 interface Props extends PropsWithChildren {}
 
 const AppWrapper = ({children}: Props) => {
-  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
+  return (
+    <SafeAreaView style={styles.container} testID="test_safe_app_wrapper">
+      {children}
+    </SafeAreaView>
+  );
 };
 
 export {AppWrapper};
