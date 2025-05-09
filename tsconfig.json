@@ -1,17 +1,19 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@shared/*": ["src/shared/*"],
-      "@screens/*": ["src/screens/*"],
-      "@utils/*": ["src/utils/*"],
-      "@assets/*": ["src/assets/*"],
-      "@services/*": ["src/services/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@navigation/*": ["src/navigation/*"],
-      "@config/*": ["src/config/*"]
-    }
+    "jsx": "react",
+    "baseUrl": "./src",
+    "esModuleInterop": true
+  },
+  "paths": {
+    "@/*": ["./src/*"],
+    "@shared/*": ["./src/shared/*"],
+    "@screens/*": ["./src/screens/*"],
+    "@utils/*": ["./src/utils/*"],
+    "@assets/*": ["./src/assets/*"],
+    "@services/*": ["./src/services/*"],
+    "@hooks/*": ["./src/hooks/*"],
+    "@navigation/*": ["./src/navigation/*"],
+    "@config/*": ["./src/config/*"]
   }
 }
