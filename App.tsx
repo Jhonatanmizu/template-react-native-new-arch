@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Config from 'react-native-config';
 // Components
 import {Text} from 'react-native';
-import {AppWrapper} from '@modules/shared/components';
+import {AppWrapper} from '@shared/components';
 
 export default function App() {
   const environment = Config.ENVIRONMENT || 'development';
