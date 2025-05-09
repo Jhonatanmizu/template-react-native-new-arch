@@ -7,6 +7,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@shared/*": ["src/shared/*"],
+      "@modules/*": ["src/modules/*"],
       "@screens/*": ["src/screens/*"],
       "@utils/*": ["src/utils/*"],
       "@assets/*": ["src/assets/*"],

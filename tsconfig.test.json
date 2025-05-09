@@ -5,19 +5,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@shared/*": ["src/shared/*"],
-      "@screens/*": ["src/screens/*"],
-      "@utils/*": ["src/utils/*"],
+      "@modules/*": ["src/modules/*"],
+      "@shared/*": ["src/modules/shared*"],
+      "@utils/*": ["src/modules/shared/utils/*"],
       "@assets/*": ["src/assets/*"],
-      "@services/*": ["src/services/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@navigation/*": ["src/navigation/*"],
-      "@config/*": ["src/config/*"]
+      "@services/*": ["src/modules/shared/services/*"],
+      "@hooks/*": ["src/modules/shared/hooks/*"],
+      "@config/*": ["src/modules/shared/config/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    "__tests__/**/*"
-  ]
+  "include": ["src/**/*", "__tests__/**/*"]
 }
-

@@ -1,7 +1,7 @@
 import React from 'react';
 import {describe, it, expect} from '@jest/globals';
 import {render, screen} from '@testing-library/react-native';
-import {AppWrapper} from '@shared/components';
+import {AppWrapper} from '@/modules/shared/components';
 import {StatusBar, Text} from 'react-native';
 
 describe('<AppWrapper />', () => {
