@@ -2,7 +2,6 @@ import {useBearStore} from '@/modules/store';
 
 describe('useBearStore', () => {
   beforeEach(() => {
-    // Reset the state before each test to avoid test interference
     useBearStore.setState({bears: 0});
   });
 
