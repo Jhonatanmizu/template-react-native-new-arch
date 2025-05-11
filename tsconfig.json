@@ -8,6 +8,7 @@
       "@/*": ["src/*"],
       "@modules/*": ["src/modules/*"],
       "@shared/*": ["src/modules/shared/*"],
+      "@infrastructure/*": ["src/modules/infrastructure/*"],
       "@utils/*": ["src/modules/utils/*"],
       "@services/*": ["src/modules/services/*"],
       "@config/*": ["src/modules/config/*"],

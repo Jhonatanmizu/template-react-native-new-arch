@@ -11,6 +11,7 @@ module.exports = {
     '^@hooks/(.*)$': '<rootDir>/src/modules/hooks/$1',
     '^@navigation/(.*)$': '<rootDir>/src/navigation/$1',
     '^@config/(.*)$': '<rootDir>/src/modules/config/$1',
+    '^@infrastructure/(.*)$': '<rootDir>/src/modules/infrastructure/$1',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transform: {
@@ -26,4 +27,24 @@ module.exports = {
     'node_modules/(?!(react-native|@react-native|@react-navigation|@react-native-community)/)',
   ],
   setupFilesAfterEnv: ['./setup-jest.ts'],
+  // Coverage configuration
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/**/*.d.ts',
+    '!src/**/*.test.{js,jsx,ts,tsx}',
+    '!src/**/__tests__/**/*',
+    '!src/**/__mocks__/**/*',
+    '!src/config/**/*',
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 50,
+      functions: 70,
+      lines: 70,
+      statements: 70,
+    },
+  },
+  coverageReporters: ['lcov', 'text', 'text-summary'],
+  coverageDirectory: '<rootDir>/coverage',
 };
