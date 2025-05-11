@@ -9,6 +9,7 @@
     "start": "react-native start",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "kn": "killall node",
     "adb-r": "adb reverse tcp:8081 tcp:8081",
     "tron": "adb reverse tcp:9090 tcp:9090",
@@ -54,11 +55,12 @@
     "aos:bundle": "yarn aos:PR-Bundle && yarn open-bundle"
   },
   "dependencies": {
+    "@shopify/restyle": "^2.4.5",
     "cross-env": "^7.0.3",
     "react": "18.3.1",
-    "zustand": "^5.0.4",
     "react-native": "0.77.2",
-    "react-native-config": "^1.5.5"
+    "react-native-config": "^1.5.5",
+    "zustand": "^5.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",
