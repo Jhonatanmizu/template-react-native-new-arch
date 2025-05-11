@@ -1,1 +1,1 @@
-export {} from './useBear.store';
+export {useBearStore} from './useBear.store';
