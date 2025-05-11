@@ -47,4 +47,20 @@ module.exports = {
   },
   coverageReporters: ['lcov', 'text', 'text-summary'],
   coverageDirectory: '<rootDir>/coverage',
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/android/',
+    '<rootDir>/ios/',
+    '<rootDir>/__mocks__/',
+    '<rootDir>/__tests__/utils/',
+    './src/modules/shared/test',
+  ],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/dist/',
+    '/build/',
+    '.*\\.d\\.ts', // Ignore TypeScript declaration files
+    './src/modules/shared/test',
+    './src/modules/shared/components/AppWrapper.tsx',
+  ],
 };
