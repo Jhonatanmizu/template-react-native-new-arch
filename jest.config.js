@@ -12,6 +12,7 @@ module.exports = {
     '^@navigation/(.*)$': '<rootDir>/src/navigation/$1',
     '^@config/(.*)$': '<rootDir>/src/modules/config/$1',
     '^@infrastructure/(.*)$': '<rootDir>/src/modules/infrastructure/$1',
+    '^react-native-mmkv$': '<rootDir>/__mocks__/react-native-mmkv.ts',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transform: {
