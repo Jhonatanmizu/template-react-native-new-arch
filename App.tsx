@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import Config from 'react-native-config';
 // Components
-import {Text} from 'react-native';
 import {AppWrapper} from '@shared/components';
+import {NavigationContainer} from '@react-navigation/native';
+import RootStack from '@/modules/routes';
 
 export default function App() {
   const environment = Config.ENVIRONMENT || 'development';
@@ -20,8 +21,10 @@ export default function App() {
   }, []);
 
   return (
-    <AppWrapper>
-      <Text>{environment}</Text>
-    </AppWrapper>
+    <NavigationContainer>
+      <AppWrapper>
+        <RootStack />
+      </AppWrapper>
+    </NavigationContainer>
   );
 }
