@@ -1,34 +1,32 @@
-# **Template React Native New Arch**
+# **React Native New Architecture Template**
 
-## **Goal**
+## **🎯 Goal**
 
-The purpose of this repo is to create a standard template in React Native implementing the New Architecture with my favorite tools and best practices for building performant, maintainable applications.
+Create a robust and scalable React Native template leveraging the New Architecture with a curated set of tools and best practices to build performant and maintainable applications.
 
 ---
 
-## **Project Structure**
+## **📁 Project Structure**
 
-```
-├── android/                # Android native code
-├── ios/                    # iOS native code
+├── android/ # Android native code
+├── ios/ # iOS native code
 ├── src/
-│   ├── assets/             # Static assets (images, fonts)
-│   ├── components/         # Reusable UI components
-│   ├── hooks/              # Custom React hooks
-│   ├── i18n/               # Internationalization files
-│   ├── navigation/         # Navigation configuration
-│   ├── screens/            # Screen components
-│   ├── services/           # API and other services
-│   ├── store/              # State management (Zustand)
-│   ├── theme/              # Theme definitions
-│   ├── types/              # TypeScript type definitions
-│   └── utils/              # Utility functions
-├── __tests__/              # Test files
-├── babel.config.js         # Babel configuration with module-resolver
-├── jest.config.js          # Jest configuration for testing
-├── tsconfig.json           # TypeScript configuration
-└── tsconfig.test.json      # TypeScript config for tests
-```
+│ ├── assets/ # Static assets (images, fonts)
+│ ├── components/ # Reusable UI components
+│ ├── hooks/ # Custom React hooks
+│ ├── i18n/ # Internationalization files
+│ ├── navigation/ # Navigation configuration
+│ ├── screens/ # Screen components
+│ ├── services/ # API and other services
+│ ├── store/ # State management (Zustand)
+│ ├── theme/ # Theme definitions
+│ ├── types/ # TypeScript type definitions
+│ └── utils/ # Utility functions
+├── tests/ # Test files
+├── babel.config.js # Babel configuration with module-resolver
+├── jest.config.js # Jest configuration for testing
+├── tsconfig.json # TypeScript configuration
+└── tsconfig.test.json # TypeScript config for tests
 
 ---
 
@@ -38,61 +36,51 @@ MIT
 
 ---
 
-## **Routes**
+## **✨ Features**
 
-The app contains the following key routes:
-
-- **Payment Resume**: Displays a summary of the payment details.
-- **Payment Success**: Shows a success screen upon completing a payment.
-- **Processing Payment**: Indicates that the payment is being processed.
-
----
-
-## **Features**
-
-- **New React Native Architecture** - Implements the improved performance and capabilities of React Native's New Architecture
-- **TypeScript Support** - Full TypeScript implementation for type safety
-- **Module Aliasing** - Configured path aliases for cleaner imports using "@" prefix
-- **Jest Testing Setup** - Properly configured for TypeScript and path aliases
-- Select a payment method.
-- Apply and configure installment options for payments.
+- 🔧 **New React Native Architecture**
+- 💬 **i18n Support**
+- 🛠️ **Path Aliases (@)**
+- 🧪 **Jest Testing**
+- 💡 **TypeScript Support**
 
 ---
 
-### Core Libraries
+## **🔌 Core Libraries**
 
-- **React 18+**: A library for building user interfaces.
-- **React Native 0.72+**: A framework for building native apps using React, with New Architecture support.
+### **⚛️ Framework**
 
-### State Management
+- **React 18+**
+- **React Native 0.72+** (New Architecture enabled)
 
-- **Zustand**: A small, fast, and scalable state management library.
-- **React Query**: Powerful data synchronization for API calls.
+### ⚙️ State & Data
 
-### Styling
+- **Zustand**
 
-- **@shopify/restyle**: A utility library for styling React Native components.
+### **🎨 Styling**
 
-### Localization
+- **@shopify/restyle**
 
-- **i18next**: Internationalization framework.
-- **react-i18next**: React bindings for i18next.
+### **🌍 Localization**
 
-### Testing
+- **i18next**
+- **react-i18next**
 
-- **Jest**: Testing framework configured for React Native
-- **ts-jest**: TypeScript preprocessor for Jest
-- **React Native Testing Library**: Utilities for testing React Native components
+### **🧪 Testing**
 
----
-
-## **Screenshots**
+- **Jest**
+- **ts-jest**
+- **React Native Testing Library**
 
 ---
 
-## **Getting Started**
+## **📸 Screenshots**
 
-### **Prerequisites**
+---
+
+## **🚀 Getting Started**
+
+### **🔧 Prerequisites**
 
 To run this project, you will need:
 
@@ -109,7 +97,7 @@ To run this project, you will need:
 
 ---
 
-### **How to Run the Project**
+### **▶️ Run Project**
 
 1. Clone this repository to your local machine.
 2. Install the project dependencies:
@@ -143,7 +131,7 @@ To run this project, you will need:
 
 ---
 
-## **Contributing**
+## **🧑‍💻Contributing**
 
 Want to contribute? Here's how you can help:
 
@@ -163,7 +151,7 @@ Want to contribute? Here's how you can help:
 
 ---
 
-## **Git Workflow**
+## **🔁 Git Workflow**
 
 ### Common Commands:
 
@@ -190,11 +178,11 @@ Want to contribute? Here's how you can help:
 
 ---
 
-## **Development Setup**
+## **📚 Development Setup**
 
 Need help setting up your React Native environment? Check out [this guide](https://react-native.rocketseat.dev) for step-by-step instructions.
 
-### **Path Aliases**
+### **🧭 Path Aliases**
 
 This project uses path aliases for cleaner imports. Instead of relative paths like `../../../components/Button`, you can use:
 
@@ -214,9 +202,7 @@ Path aliases are configured in:
 
 ---
 
-## **Troubleshooting**
-
-### Path Alias Issues
+## **🧪 Troubleshooting**
 
 If VS Code or Jest doesn't recognize path aliases:
 
@@ -224,13 +210,13 @@ If VS Code or Jest doesn't recognize path aliases:
 - Ensure `tsconfig.json` has correct `baseUrl` and `paths` configurations
 - Run `yarn tsc --noEmit` to verify TypeScript configuration
 
-### Android Build Issues
+### **🤖 Android Issues**
 
 - Ensure NDK version 26.1.10909125 is installed through Android Studio
 - Check that `local.properties` points to the correct SDK and NDK paths
 - Try cleaning the project with `cd android && ./gradlew clean && cd ..`
 
-### iOS Build Issues (Mac Only)
+### **🍏 iOS Issues**
 
 - Make sure CocoaPods is installed and pods are up to date: `cd ios && pod install && cd ..`
 - Try cleaning the build: `cd ios && xcodebuild clean && cd ..`
