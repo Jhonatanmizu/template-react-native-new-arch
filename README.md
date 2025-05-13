@@ -5,28 +5,29 @@
 Create a robust and scalable React Native template leveraging the New Architecture with a curated set of tools and best practices to build performant and maintainable applications.
 
 ---
-
 ## **📁 Project Structure**
 
-├── android/ # Android native code
-├── ios/ # iOS native code
+```text
+├── android/                # Android native code
+├── ios/                    # iOS native code
 ├── src/
-│ ├── assets/ # Static assets (images, fonts)
-│ ├── components/ # Reusable UI components
-│ ├── hooks/ # Custom React hooks
-│ ├── i18n/ # Internationalization files
-│ ├── navigation/ # Navigation configuration
-│ ├── screens/ # Screen components
-│ ├── services/ # API and other services
-│ ├── store/ # State management (Zustand)
-│ ├── theme/ # Theme definitions
-│ ├── types/ # TypeScript type definitions
-│ └── utils/ # Utility functions
-├── tests/ # Test files
-├── babel.config.js # Babel configuration with module-resolver
-├── jest.config.js # Jest configuration for testing
-├── tsconfig.json # TypeScript configuration
-└── tsconfig.test.json # TypeScript config for tests
+│   ├── assets/             # Static assets (images, fonts)
+│   ├── components/         # Reusable UI components
+│   ├── hooks/              # Custom React hooks
+│   ├── i18n/               # Internationalization files
+│   ├── navigation/         # Navigation configuration
+│   ├── screens/            # Screen components
+│   ├── services/           # API and other services
+│   ├── store/              # State management (Zustand)
+│   ├── theme/              # Theme definitions
+│   ├── types/              # TypeScript type definitions
+│   └── utils/              # Utility functions
+├── tests/                  # Test files
+├── babel.config.js         # Babel configuration with module-resolver
+├── jest.config.js          # Jest configuration for testing
+├── tsconfig.json           # TypeScript configuration
+└── tsconfig.test.json      # TypeScript config for tests
+```
 
 ---
 
