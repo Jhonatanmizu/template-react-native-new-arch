@@ -1,5 +1,5 @@
 import {renderHook, act} from '@testing-library/react-hooks';
-import {useMMKVStorage} from '@/modules/shared/hooks/useMMKVStorage';
+import {useMMKVStorage} from '@/modules/shared/hooks';
 import * as storage from '@shared/storage/mmkv';
 
 jest.mock('@shared/storage/mmkv');
