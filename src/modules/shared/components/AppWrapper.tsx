@@ -14,6 +14,7 @@ interface Props extends PropsWithChildren {}
 const AppWrapper = ({children}: Props) => {
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar barStyle="dark-content" animated translucent />
       <SafeAreaView style={styles.container} testID="test_safe_app_wrapper">
         {children}
       </SafeAreaView>

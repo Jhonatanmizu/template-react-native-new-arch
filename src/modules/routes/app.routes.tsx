@@ -20,14 +20,6 @@ export const appRoutesList: RoutesList<IAppStackParamsList>[] = [
     name: 'exampleRoutes',
     component: ExampleRoutes,
   },
-  {
-    name: 'tabRoutes',
-    component: () => <></>, // Replace with your actual component
-  },
-  {
-    name: 'drawerRoutes',
-    component: () => <></>, // Replace with your actual component
-  },
 ];
 
 const AppStack = createNativeStackNavigator<IAppStackParamsList>();
