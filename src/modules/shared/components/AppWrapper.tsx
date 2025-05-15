@@ -3,7 +3,7 @@ import React, {PropsWithChildren} from 'react';
 import {ThemeProvider} from '@shopify/restyle';
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 // Theme
-import theme from '@infrastructure/theme';
+import theme from '@/infrastructure/theme';
 
 const STATUS_BAR_HEIGHT: number = StatusBar.currentHeight
   ? StatusBar.currentHeight

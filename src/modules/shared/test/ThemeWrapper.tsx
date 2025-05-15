@@ -1,7 +1,7 @@
 import React, {ReactElement, ReactNode} from 'react';
 import {ThemeProvider} from '@shopify/restyle';
 import {render, RenderOptions} from '@testing-library/react-native';
-import theme from '@infrastructure/theme';
+import theme from '@/infrastructure/theme';
 
 interface ThemeWrapperProps {
   children: ReactNode;
