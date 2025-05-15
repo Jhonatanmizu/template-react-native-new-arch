@@ -1,4 +1,4 @@
-import {useBearStore} from '@/modules/store';
+import {useBearStore} from '@/store';
 
 describe('useBearStore', () => {
   beforeEach(() => {

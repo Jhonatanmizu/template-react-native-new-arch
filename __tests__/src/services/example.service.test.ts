@@ -1,4 +1,4 @@
-import {ExampleService} from '@/modules/services';
+import {ExampleService} from '@/services';
 
 describe('ExampleService', () => {
   it('should return example data', () => {
