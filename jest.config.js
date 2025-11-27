@@ -1,6 +1,5 @@
 module.exports = {
   preset: 'react-native',
-  setupFiles: ['<rootDir>/__mocks__/react-native-config.js'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@shared/(.*)$': '<rootDir>/src/modules/shared/$1',
