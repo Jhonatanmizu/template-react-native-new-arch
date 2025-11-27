@@ -108,6 +108,21 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+      flavorDimensions 'env'
+    productFlavors {
+        development {
+            dimension 'env'
+            applicationIdSuffix ".development"
+        }
+        staging {
+            dimension 'env'
+            applicationIdSuffix ".staging"
+        }
+        production {
+            dimension 'env'
+            applicationIdSuffix ""
+        }
+    }
 }
 
 dependencies {

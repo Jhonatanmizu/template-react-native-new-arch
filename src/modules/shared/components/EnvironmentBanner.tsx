@@ -1,9 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, ViewStyle } from 'react-native';
 import { ENVIRONMENT } from '@env';
+
+enum ENVIRONMENTS {
+  DEV = 'development',
+  STAGING = 'staging',
+  PROD = 'production',
+}
 const EnvironmentBanner = () => {
   const env = ENVIRONMENT;
-  console.log('ENV', env);
   const bannerColor =
     env === 'development' ? 'blue' : env === 'staging' ? 'orange' : 'green';
   const bannerText =
@@ -18,7 +23,7 @@ const EnvironmentBanner = () => {
     backgroundColor: bannerColor,
   };
 
-  if (ENVIRONMENT === 'prodcuction') return null;
+  if (ENVIRONMENT === ENVIRONMENTS.PROD) return null;
 
   return (
     <View style={customStyles}>
