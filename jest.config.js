@@ -1,6 +1,5 @@
 module.exports = {
   preset: 'react-native',
-  setupFiles: ['<rootDir>/__mocks__/react-native-config.js'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@shared/(.*)$': '<rootDir>/src/modules/shared/$1',
@@ -13,6 +12,7 @@ module.exports = {
     '^@config/(.*)$': '<rootDir>/src/modules/config/$1',
     '^@infrastructure/(.*)$': '<rootDir>/src/modules/infrastructure/$1',
     '^react-native-mmkv$': '<rootDir>/__mocks__/react-native-mmkv.ts',
+    '^@env$': '<rootDir>/__mocks__/react-native-dotenv.ts',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transform: {

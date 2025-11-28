@@ -108,8 +108,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-
-    flavorDimensions 'env'
+      flavorDimensions 'env'
     productFlavors {
         development {
             dimension 'env'
@@ -136,11 +135,3 @@ dependencies {
         implementation jscFlavor
     }
 }
-
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
-
-project.ext.envConfigFiles = [
-        development: ".env.development",
-        staging :".env.staging",
-        production:'.env.production'
-]
