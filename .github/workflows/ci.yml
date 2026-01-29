@@ -47,6 +47,11 @@ jobs:
         run: |
           cd android
           bundle exec fastlane build
+      - name: Upload Android Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: android/app/build/outputs/apk/production/release/app-production-release.apk
 
   build-ios:
     needs: lint-and-test
@@ -72,3 +77,8 @@ jobs:
         run: |
           cd ios
           bundle exec fastlane build
+      - name: Upload iOS Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa
+          path: ios/TemplateReactNativeNewArch.ipa
