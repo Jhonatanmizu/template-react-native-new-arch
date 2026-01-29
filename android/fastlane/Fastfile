@@ -1,0 +1,17 @@
+default_platform(:android)
+
+platform :android do
+  desc "Run Jest tests"
+  lane :test do
+    Dir.chdir("..") do
+      sh("yarn test")
+    end
+  end
+
+  desc "Build the Android app"
+  lane :build do
+    Dir.chdir("..") do
+      sh("yarn aos:prod:release-apk")
+    end
+  end
+end
