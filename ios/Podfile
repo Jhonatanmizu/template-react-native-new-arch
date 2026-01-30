@@ -23,6 +23,8 @@ target 'TemplateReactNativeNewArch' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'Firebase/Analytics'
+
   post_install do |installer|
     react_native_post_install(
       installer,
