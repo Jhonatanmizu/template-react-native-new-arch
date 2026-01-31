@@ -1,6 +1,29 @@
 default_platform(:ios)
 
 platform :ios do
+    desc "Build and upload to TestFlight"
+    lane :beta do
+      cocoapods(
+        workspace: "TemplateReactNativeNewArch.xcworkspace"
+      )
+      build_app(
+        workspace: "TemplateReactNativeNewArch.xcworkspace",
+        scheme: "TemplateReactNativeNewArch"
+      )
+      upload_to_testflight
+    end
+
+    desc "Release to App Store"
+    lane :release do
+      cocoapods(
+        workspace: "TemplateReactNativeNewArch.xcworkspace"
+      )
+      build_app(
+        workspace: "TemplateReactNativeNewArch.xcworkspace",
+        scheme: "TemplateReactNativeNewArch"
+      )
+      upload_to_app_store
+    end
   desc "Run Jest tests"
   lane :test do
     Dir.chdir("..") do
