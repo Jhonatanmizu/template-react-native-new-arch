@@ -1,6 +1,6 @@
-import {ParamListBase} from '@react-navigation/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-
+import { ParamListBase } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { JSX } from 'react';
 export type RoutesList<T> = {
   name: keyof T;
   component: (props: any) => JSX.Element;

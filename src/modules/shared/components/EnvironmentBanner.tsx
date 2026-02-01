@@ -1,22 +1,22 @@
 import React from 'react';
 import { View, Text, StyleSheet, ViewStyle } from 'react-native';
 import { ENVIRONMENT } from '@env';
+import { ENVIRONMENTS } from '@/modules/shared/enums';
 
-enum ENVIRONMENTS {
-  DEV = 'development',
-  STAGING = 'staging',
-  PROD = 'production',
-}
 const EnvironmentBanner = () => {
   const env = ENVIRONMENT;
-  const bannerColor =
-    env === 'development' ? 'blue' : env === 'staging' ? 'orange' : 'green';
-  const bannerText =
-    env === 'development'
-      ? 'Development'
-      : env === 'staging'
-      ? 'Staging'
-      : 'Production';
+  const { bannerColor, bannerText } = React.useMemo(() => {
+    switch (env) {
+      case ENVIRONMENTS.DEV:
+        return { bannerColor: 'blue', bannerText: 'Development' };
+      case ENVIRONMENTS.STAGING:
+        return { bannerColor: 'orange', bannerText: 'Staging' };
+      case ENVIRONMENTS.PROD:
+        return { bannerColor: 'green', bannerText: 'Production' };
+      default:
+        return { bannerColor: 'gray', bannerText: 'Unknown' };
+    }
+  }, [env]);
 
   const customStyles: ViewStyle = {
     ...styles.container,

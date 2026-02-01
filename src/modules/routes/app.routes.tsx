@@ -4,8 +4,10 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 // Types
-import {RoutesList} from '@shared/types';
+import { RoutesList } from '@shared/types';
 import ExampleRoutes from '@modules/example/routes';
+import BottomTabRoutes from './bottom-tab.routes';
+import DrawerRoutes from './drawer.routes';
 
 export type IAppStackParamsList = {
   exampleRoutes: undefined;
@@ -20,6 +22,14 @@ export const appRoutesList: RoutesList<IAppStackParamsList>[] = [
     name: 'exampleRoutes',
     component: ExampleRoutes,
   },
+  {
+    name: 'tabRoutes',
+    component: BottomTabRoutes,
+  },
+  {
+    name: 'drawerRoutes',
+    component: DrawerRoutes,
+  },
 ];
 
 const AppStack = createNativeStackNavigator<IAppStackParamsList>();
@@ -30,7 +40,8 @@ const AppRoutes = () => {
       initialRouteName="exampleRoutes"
       screenOptions={() => ({
         headerShown: false,
-      })}>
+      })}
+    >
       {appRoutesList.map(ap => (
         <AppStack.Screen
           key={ap.name}
