@@ -64,7 +64,7 @@
     "@react-navigation/native-stack": "^7.3.13",
     "@shopify/restyle": "^2.4.5",
     "@testing-library/react-hooks": "^8.0.1",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.1.0",
     "react": "19.1.1",
     "react-native": "^0.82.0",
     "react-native-mmkv": "^4.0.1",
