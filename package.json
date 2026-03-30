@@ -76,7 +76,7 @@
   "devDependencies": {
     "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.28.3",
-    "@babel/runtime": "^7.27.1",
+    "@babel/runtime": "^7.29.2",
     "@react-native-community/cli": "^20.0.0",
     "@react-native-community/cli-platform-android": "^20.0.0",
     "@react-native-community/cli-platform-ios": "^20.0.0",
