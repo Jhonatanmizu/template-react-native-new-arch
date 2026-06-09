@@ -1,8 +1,8 @@
 import '@testing-library/react-native';
-import {MMKV} from 'react-native-mmkv';
+import {createMMKV} from 'react-native-mmkv';
 
 // Reset MMKV storage between tests
 beforeEach(() => {
-  const mmkv = new MMKV();
+  const mmkv = createMMKV();
   mmkv.clearAll();
 });

@@ -1,6 +1,6 @@
-import {MMKV} from 'react-native-mmkv';
+import {createMMKV} from 'react-native-mmkv';
 
-const storage = new MMKV();
+const storage = createMMKV();
 
 export const getStorage = () => storage;
 
@@ -17,7 +17,7 @@ export const getStorageValue = <T = any>(key: string): T | null => {
 };
 
 export const removeStorage = (key: string): void => {
-  storage.delete(key);
+  storage.remove(key);
 };
 
 export const clearStorage = (): void => {

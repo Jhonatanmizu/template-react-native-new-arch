@@ -1,9 +1,10 @@
+import React from 'react';
 import {ParamListBase} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export type RoutesList<T> = {
   name: keyof T;
-  component: (props: any) => JSX.Element;
+  component: (props: any) => React.JSX.Element;
   statusBarStyle?: 'light-content' | 'dark-content';
   animationType?: 'fade' | 'slide';
 };

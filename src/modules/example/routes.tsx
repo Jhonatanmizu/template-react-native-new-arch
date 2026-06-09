@@ -1,11 +1,10 @@
 import React from 'react';
-import {RoutesList} from '@shared/types';
-import {ExampleRoutesParamsList} from './types';
+import type { RoutesList } from '@shared/types';
+import type { ExampleRoutesParamsList } from './types';
 import ExampleScreen from './screens/ExampleScreen';
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationProp,
-} from '@react-navigation/native-stack';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export type ExampleRoutesStack =
   NativeStackNavigationProp<ExampleRoutesParamsList>;

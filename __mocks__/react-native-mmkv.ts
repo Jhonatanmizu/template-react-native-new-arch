@@ -1,6 +1,6 @@
 const mockStore: Record<string, string> = {};
 
-export class MMKV {
+class MMKV {
   set(key: string, value: string) {
     mockStore[key] = value;
   }
@@ -9,7 +9,7 @@ export class MMKV {
     return mockStore[key];
   }
 
-  delete(key: string) {
+  remove(key: string) {
     delete mockStore[key];
   }
 
@@ -21,3 +21,5 @@ export class MMKV {
     return Object.keys(mockStore);
   }
 }
+
+export const createMMKV = () => new MMKV();

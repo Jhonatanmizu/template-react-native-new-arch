@@ -6,7 +6,7 @@
     "baseUrl": ".",
     "jsx": "react",
     "esModuleInterop": true,
-    "typeRoots": ["./src/modules/shared/types"],
+    "typeRoots": ["./src/modules/shared/types", "node_modules/@types"],
     "paths": {
       "@/*": ["src/*"],
       "@modules/*": ["src/modules/*"],

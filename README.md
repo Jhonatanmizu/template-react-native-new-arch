@@ -1,30 +1,29 @@
 # **React Native New Architecture Template**
 
-## **🎯 Goal**
+## **Goal**
 
 Create a robust and scalable React Native template leveraging the New Architecture with a curated set of tools and best practices to build performant and maintainable applications.
 
 ---
-## **📁 Project Structure**
+
+## **Project Structure**
 
 ```text
-├── android/                # Android native code
+├── android/                # Android native code (SDK 36, NDK 27.1.12297006)
 ├── ios/                    # iOS native code
 ├── src/
-│   ├── assets/             # Static assets (images, fonts)
-│   ├── components/         # Reusable UI components
-│   ├── hooks/              # Custom React hooks
-│   ├── i18n/               # Internationalization files
-│   ├── navigation/         # Navigation configuration
-│   ├── screens/            # Screen components
-│   ├── services/           # API and other services
-│   ├── store/              # State management (Zustand)
-│   ├── theme/              # Theme definitions
-│   ├── types/              # TypeScript type definitions
-│   └── utils/              # Utility functions
-├── tests/                  # Test files
+│   ├── infrastructure/     # Theme definitions (restyle)
+│   │   └── theme/
+│   ├── modules/
+│   │   ├── example/        # Example module (screens + routes)
+│   │   ├── routes/         # Navigation configuration
+│   │   └── shared/         # Shared components, hooks, storage, types
+│   ├── services/           # API and business logic services
+│   └── store/              # State management (Zustand)
+├── __mocks__/              # Jest manual mocks
+├── __tests__/              # Integration tests
 ├── babel.config.js         # Babel configuration with module-resolver
-├── jest.config.js          # Jest configuration for testing
+├── jest.config.js          # Jest configuration (@react-native/jest-preset)
 ├── tsconfig.json           # TypeScript configuration
 └── tsconfig.test.json      # TypeScript config for tests
 ```
@@ -37,68 +36,81 @@ MIT
 
 ---
 
-## **✨ Features**
+## **Features**
 
-- 🔧 **New React Native Architecture**
-- 💬 **i18n Support**
-- 🛠️ **Path Aliases (@)**
-- 🧪 **Jest Testing**
-- 💡 **TypeScript Support**
-
----
-
-## **🔌 Core Libraries**
-
-### **⚛️ Framework**
-
-- **React 18+**
-- **React Native 0.72+** (New Architecture enabled)
-
-### ⚙️ State & Data
-
-- **Zustand**
-
-### **🎨 Styling**
-
-- **@shopify/restyle**
-
-### **🌍 Localization**
-
-- **i18next**
-- **react-i18next**
-
-### **🧪 Testing**
-
-- **Jest**
-- **ts-jest**
-- **React Native Testing Library**
+- New React Native Architecture (Fabric + TurboModules)
+- Path Aliases (@, @shared, @modules, etc.)
+- Jest + React Native Testing Library + ts-jest
+- TypeScript
+- Multi-environment builds (development, staging, production)
+- Zustand state management
+- MMKV storage
+- @shopify/restyle theming
 
 ---
 
-## **📸 Screenshots**
+## **Core Libraries**
+
+### **Framework**
+
+- **React 19**
+- **React Native 0.85** (New Architecture enabled)
+
+### **Navigation**
+
+- **@react-navigation/native** v7
+- **@react-navigation/native-stack** v7
+- **react-native-screens**
+- **react-native-safe-area-context**
+
+### **State & Storage**
+
+- **Zustand** v5
+- **react-native-mmkv** v4
+
+### **Styling**
+
+- **@shopify/restyle** v2
+
+### **Testing**
+
+- **Jest** v29
+- **ts-jest** v29
+- **@testing-library/react-native** v13
+- **@react-native/jest-preset**
+
+### **Dev & Build**
+
+- **TypeScript** v5.8
+- **ESLint** v8
+- **Prettier** v3.8
+- **Babel** v7.28
+- **Metro** (@react-native/metro-config)
+- **react-native-dotenv** (env config per scheme)
 
 ---
 
-## **🚀 Getting Started**
+## **Getting Started**
 
-### **🔧 Prerequisites**
+### **Prerequisites**
 
 To run this project, you will need:
 
-- A drink (highly recommend coffee ☕ for best performance)
-- [Node.js](https://nodejs.org/) (recommended v18+)
-- [Yarn](https://yarnpkg.com/) or npm as package manager
-- A code editor (recommendation: [Visual Studio Code](https://code.visualstudio.com/))
+- A drink (highly recommend coffee for best performance)
+- [Node.js](https://nodejs.org/) (v20+)
+- [Yarn](https://yarnpkg.com/) as package manager
+- A code editor ([Visual Studio Code](https://code.visualstudio.com/))
 - [Android Studio](https://developer.android.com/studio) for Android development
-  - Android SDK Platform 33+
-  - Android NDK 26.1.10909125 (specific version required)
-- [Xcode](https://developer.apple.com/xcode/) (14+ recommended) for iOS development (Mac only)
+  - Android SDK Platform 36
+  - Android NDK 27.1.12297006 (specific version required)
+  - Kotlin 2.1.20
+- [Xcode](https://developer.apple.com/xcode/) (14+) for iOS development (Mac only)
 - [CocoaPods](https://cocoapods.org/) for iOS dependencies (Mac only)
 - [Watchman](https://facebook.github.io/watchman/docs/install) for file system watching
 
 ---
 
-### **▶️ Run Project**
+### **Run Project**
 
 1. Clone this repository to your local machine.
 2. Install the project dependencies:
@@ -112,7 +124,7 @@ To run this project, you will need:
 4. To enable the New Architecture for Android, create or update `android/local.properties` with your SDK and NDK paths:
    ```
    sdk.dir=/path/to/your/Android/sdk
-   ndk.dir=/path/to/your/Android/sdk/ndk/26.1.10909125
+   ndk.dir=/path/to/your/Android/sdk/ndk/27.1.12297006
    ```
 5. Run the project:
 
@@ -132,7 +144,19 @@ To run this project, you will need:
 
 ---
 
-## **🧑‍💻Contributing**
+## **Available Environments**
+
+The project supports three build configurations via `APP_ENV`:
+
+| Env | iOS Scheme | Android Build Type | Command |
+|-----|-----------|-------------------|---------|
+| Development | development | developmentDebug | `yarn aos:dev` / `yarn ios:dev` |
+| Staging | staging | stagingDebug | `yarn aos:staging` / `yarn ios:staging` |
+| Production | production | productionDebug | `yarn aos:prod` / `yarn ios:prod` |
+
+---
+
+## **Contributing**
 
 Want to contribute? Here's how you can help:
 
@@ -152,7 +176,7 @@ Want to contribute? Here's how you can help:
 
 ---
 
-## **🔁 Git Workflow**
+## **Git Workflow**
 
 ### Common Commands:
 
@@ -179,11 +203,9 @@ Want to contribute? Here's how you can help:
 
 ---
 
-## **📚 Development Setup**
+## **Development Setup**
 
-Need help setting up your React Native environment? Check out [this guide](https://react-native.rocketseat.dev) for step-by-step instructions.
-
-### **🧭 Path Aliases**
+### **Path Aliases**
 
 This project uses path aliases for cleaner imports. Instead of relative paths like `../../../components/Button`, you can use:
 
@@ -195,6 +217,21 @@ import Button from '../../../components/Button';
 import Button from '@/components/Button';
 ```
 
+Available aliases:
+
+| Alias | Path |
+|-------|------|
+| `@/` | `src/` |
+| `@shared/` | `src/modules/shared/` |
+| `@modules/` | `src/modules/` |
+| `@services/` | `src/modules/services/` |
+| `@hooks/` | `src/modules/hooks/` |
+| `@utils/` | `src/modules/utils/` |
+| `@assets/` | `src/assets/` |
+| `@navigation/` | `src/navigation/` |
+| `@infrastructure/` | `src/modules/infrastructure/` |
+| `@config/` | `src/modules/config/` |
+
 Path aliases are configured in:
 
 - `tsconfig.json` - For TypeScript resolution
@@ -203,21 +240,21 @@ Path aliases are configured in:
 
 ---
 
-## **🧪 Troubleshooting**
+## **Troubleshooting**
 
 If VS Code or Jest doesn't recognize path aliases:
 
 - Restart TypeScript server: Ctrl+Shift+P → "TypeScript: Restart TS Server"
 - Ensure `tsconfig.json` has correct `baseUrl` and `paths` configurations
-- Run `yarn tsc --noEmit` to verify TypeScript configuration
+- Run `npx tsc --noEmit` to verify TypeScript configuration
 
-### **🤖 Android Issues**
+### **Android Issues**
 
-- Ensure NDK version 26.1.10909125 is installed through Android Studio
+- Ensure NDK version 27.1.12297006 is installed through Android Studio
 - Check that `local.properties` points to the correct SDK and NDK paths
 - Try cleaning the project with `cd android && ./gradlew clean && cd ..`
 
-### **🍏 iOS Issues**
+### **iOS Issues**
 
 - Make sure CocoaPods is installed and pods are up to date: `cd ios && pod install && cd ..`
 - Try cleaning the build: `cd ios && xcodebuild clean && cd ..`
